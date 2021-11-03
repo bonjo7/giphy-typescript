@@ -1,0 +1,11 @@
+.img {
+  height: 250px;
+}
+
+.card {
+  margin-top: 15px;
+  background-color: #737373 !important;
+  color: #fff !important;
+  font-weight: bold;
+  text-align: center;
+}
