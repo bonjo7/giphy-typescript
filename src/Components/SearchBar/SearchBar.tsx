@@ -30,7 +30,6 @@ const SearchBar: FunctionComponent = () => {
           id='searchButton'
           variant='primary'
           onClick={() => {
-            console.log(item);
             searchGifs(item);
           }}
         >
