@@ -11,14 +11,12 @@ const UseRoutes = () => {
 
   const getGifsData = async () => {
     setIsLoading(true);
-    console.log(isLoading)
     try {
       await axios
         .get(`${baseURL}trending?api_key=${API_KEY}&limit=27&rating=g`)
         .then((res) => {
           addGif(res.data.data);
           setIsLoading(false);
-          console.log(isLoading)
         });
     } catch (err) {
       console.log(err);
@@ -28,7 +26,6 @@ const UseRoutes = () => {
 
   const searchGifs = async (searchItem: string) => {
     setIsLoading(true);
-    console.log(isLoading)
     try {
       await axios
         .get(
@@ -36,8 +33,6 @@ const UseRoutes = () => {
         )
         .then((res) => {
           addGif(res.data.data);
-          
-          console.log(isLoading)
         });
     } catch (err) {
       console.log(err);
