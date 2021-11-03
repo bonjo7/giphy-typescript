@@ -1,8 +1,8 @@
-import * as React from "react";
+import React, { FunctionComponent } from "react";
 import { Navbar, Container } from "react-bootstrap";
 import GiphyLogo from "../Images/giphy.png";
 
-const NavBar: React.FunctionComponent = () => (
+const NavBar: FunctionComponent = () => (
   <Navbar bg='dark' variant='dark'>
     <Container>
       <Navbar.Brand href='#home'>

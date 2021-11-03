@@ -1,15 +1,21 @@
-import * as React from "react";
+import React, { FunctionComponent, useEffect} from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import UseRoutes from "../../Hooks/RoutesHook";
 import { useSharedStore } from "../../Store/SahredStore";
 
-const GifList: React.FunctionComponent = () => {
+const GifList: FunctionComponent = () => {
   const { gifs } = useSharedStore();
+
+  const { getGifsData } = UseRoutes();
+
+  useEffect(() => {
+    getGifsData();
+  }, []);
 
   return (
     <Container id='landing-page' style={{ marginBottom: "50px" }}>
       <Row>
         {gifs?.map((gif, key) => {
-            console.log(gif?.images?.original.url)
           const altTag = `${gif?.id}-gif`;
           return (
             <Col sm={4}>
@@ -20,9 +26,7 @@ const GifList: React.FunctionComponent = () => {
                   src={gif.images.original.url}
                 />
                 <Card.Body>
-                  <Card.Text>
-                  {gif.title.split("by")[0]}
-                  </Card.Text>
+                  <Card.Text>{gif.title.split("by")[0]}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>

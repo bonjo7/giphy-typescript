@@ -1,15 +1,15 @@
-import * as React from "react";
+import React, { FunctionComponent, useState, ChangeEvent } from "react";
 import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 import { MagnifyingGlass } from "phosphor-react";
 import UseRoutes from "../../Hooks/RoutesHook";
 import styles from "./searchBar.module.css";
 
-const SearchBar: React.FunctionComponent = () => {
+const SearchBar: FunctionComponent = () => {
   const { searchGifs } = UseRoutes();
 
-  const [item, setSearchItem] = React.useState<string>("");
+  const [item, setSearchItem] = useState<string>("");
 
-  const handleChnage = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChnage = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchItem(e.target.value);
   };
 
@@ -28,7 +28,10 @@ const SearchBar: React.FunctionComponent = () => {
           aria-label='close-search-button'
           id='searchButton'
           variant='primary'
-          onClick={() => {console.log(item); searchGifs(item)}}
+          onClick={() => {
+            console.log(item);
+            searchGifs(item);
+          }}
         >
           <MagnifyingGlass size={20} />
         </Button>
