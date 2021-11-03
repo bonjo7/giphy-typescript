@@ -26,10 +26,7 @@ const UseRoutes = () => {
           `${baseURL}search?api_key=${API_KEY}&q=${searchItem}&rating=g&lang=en`
         )
         .then((res) => {
-            console.log(res)
             addGif(res.data.data);
-
-            console.log("gifs", gifs)
         });
     } catch (err) {
       console.log(err);
@@ -38,7 +35,8 @@ const UseRoutes = () => {
 
   return {
     getGifsData,
-    searchGifs
+    searchGifs,
+    gifs
   };
 };
 
