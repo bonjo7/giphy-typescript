@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useEffect } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import UseRoutes from "../../Hooks/RoutesHook";
 import { useSharedStore } from "../../Store/SahredStore";
 import styles from "./GifList.module.css";

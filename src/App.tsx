@@ -1,14 +1,20 @@
-import * as React from "react";
+import React, { FunctionComponent } from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { NavBar } from "./Components/NavBar/NavBar";
 import { SearchBar } from "./Components/SearchBar/SearchBar";
-import { GifList } from "./Components/GifList/GifList";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const App: React.FunctionComponent = () => (
-  <>
-    <NavBar />
-    <SearchBar />
-    <GifList />
-  </>
-);
+const App: FunctionComponent = () => {
+  return (
+    <>
+      <Router>
+        <NavBar />
+
+        <Switch>
+          <Route exact path='/' component={SearchBar} />
+        </Switch>
+      </Router>
+    </>
+  );
+};
 export default App;

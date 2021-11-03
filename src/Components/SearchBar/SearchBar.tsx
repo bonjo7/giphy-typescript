@@ -1,6 +1,7 @@
 import React, { FunctionComponent, useState, ChangeEvent } from "react";
 import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 import { MagnifyingGlass } from "phosphor-react";
+import { GifList } from "../GifList/GifList";
 import UseRoutes from "../../Hooks/RoutesHook";
 import styles from "./searchBar.module.css";
 
@@ -36,6 +37,8 @@ const SearchBar: FunctionComponent = () => {
           <MagnifyingGlass size={20} />
         </Button>
       </InputGroup>
+
+      <GifList />
     </Container>
   );
 };
