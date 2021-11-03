@@ -1,7 +1,9 @@
 import create from "zustand";
-
+interface Gif {
+  [x: string]: any;
+}
 interface GifState {
-  gifs: [];
+  gifs: Gif[];
   addGif: (gifs: any) => void;
 }
 
