@@ -32,6 +32,7 @@ const UseRoutes = () => {
           `${baseURL}search?api_key=${API_KEY}&q=${searchItem}&rating=g&lang=en`
         )
         .then((res) => {
+          setIsLoading(false);
           addGif(res.data.data);
         });
     } catch (err) {

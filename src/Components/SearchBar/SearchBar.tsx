@@ -6,7 +6,7 @@ import UseRoutes from "../../Hooks/RoutesHook";
 import styles from "./searchBar.module.css";
 
 const SearchBar: FunctionComponent = () => {
-  const { searchGifs } = UseRoutes();
+  const { searchGifs, getGifsData, isLoading } = UseRoutes();
 
   const [item, setSearchItem] = useState<string>("");
 
@@ -37,7 +37,7 @@ const SearchBar: FunctionComponent = () => {
         </Button>
       </InputGroup>
 
-      <GifList />
+      <GifList isLoading={isLoading} getGifsData={getGifsData} />
     </Container>
   );
 };

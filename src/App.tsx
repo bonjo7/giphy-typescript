@@ -11,10 +11,11 @@ const App: FunctionComponent = () => {
       <Router>
         <div className='main'>
           <NavBar />
-
-          <Switch>
-            <Route exact path='/' component={SearchBar} />
-          </Switch>
+          <div className='wrapper'>
+            <Switch>
+              <Route exact path='/' component={SearchBar} />
+            </Switch>
+          </div>
         </div>
       </Router>
     </>

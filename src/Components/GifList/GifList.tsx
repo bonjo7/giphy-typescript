@@ -1,20 +1,26 @@
 import React, { FunctionComponent, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Spinner from "../Spinner/Spinner";
-import UseRoutes from "../../Hooks/RoutesHook";
 import { useSharedStore } from "../../Store/SahredStore";
 import styles from "./GifList.module.css";
 
-const GifList: FunctionComponent = () => {
+interface Props {
+  getGifsData(): void;
+  isLoading: boolean;
+}
+
+const GifList: FunctionComponent<Props> = (props) => {
+
+  
   const { gifs } = useSharedStore();
 
-  const { getGifsData, isLoading } = UseRoutes();
+  // const { getGifsData, isLoading } = UseRoutes();
 
   useEffect(() => {
-    getGifsData();
+    props.getGifsData();
   }, []);
 
-  return isLoading ? (
+  return props.isLoading ? (
     <Spinner />
   ) : (
     <Container id='landing-page' style={{ marginBottom: "50px" }}>
