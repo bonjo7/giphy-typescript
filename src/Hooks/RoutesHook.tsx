@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import axios from "axios";
 import { useSharedStore } from "../Store/SahredStore";
 
 const UseRoutes = () => {
-
   const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
   const baseURL = `https://api.giphy.com/v1/gifs/`;
   const [isLoading, setIsLoading] = React.useState(false);
+  const [error, setError] = React.useState(false);
   const { addGif } = useSharedStore();
 
   const getGifsData = async () => {
@@ -17,6 +17,7 @@ const UseRoutes = () => {
         .then((res) => {
           addGif(res.data.data);
           setIsLoading(false);
+          setError(false);
         });
     } catch (err) {
       console.log(err);
@@ -26,17 +27,24 @@ const UseRoutes = () => {
 
   const searchGifs = async (searchItem: string) => {
     setIsLoading(true);
-    try {
-      await axios
-        .get(
-          `${baseURL}search?api_key=${API_KEY}&q=${searchItem}&rating=g&lang=en`
-        )
-        .then((res) => {
-          setIsLoading(false);
-          addGif(res.data.data);
-        });
-    } catch (err) {
-      console.log(err);
+    setError(false);
+    if (searchItem !== "") {
+      try {
+        await axios
+          .get(
+            `${baseURL}search?api_key=${API_KEY}&q=${searchItem}&rating=g&lang=en`
+          )
+          .then((res) => {
+            setIsLoading(false);
+            setError(false);
+            addGif(res.data.data);
+          });
+      } catch (err) {
+        console.log(err);
+        setIsLoading(false);
+      }
+    } else {
+      setError(true);
       setIsLoading(false);
     }
   };
@@ -44,7 +52,8 @@ const UseRoutes = () => {
   return {
     getGifsData,
     searchGifs,
-    isLoading
+    isLoading,
+    error,
   };
 };
 
