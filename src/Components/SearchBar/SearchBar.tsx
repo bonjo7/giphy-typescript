@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, ChangeEvent, useRef } from "react";
+import { FunctionComponent, useState, ChangeEvent, useRef } from "react";
 import { Container, InputGroup, FormControl, Button } from "react-bootstrap";
 import { MagnifyingGlass, XCircle } from "phosphor-react";
 import { GifList } from "../GifList/GifList";

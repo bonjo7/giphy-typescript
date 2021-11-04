@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useSharedStore } from "../Store/SahredStore";
 
 const UseRoutes = () => {
   const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
   const baseURL = `https://api.giphy.com/v1/gifs/`;
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const { addGif } = useSharedStore();
 
   const getGifsData = async () => {

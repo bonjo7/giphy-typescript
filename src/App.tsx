@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { NavBar } from "./Components/NavBar/NavBar";
 import { SearchBar } from "./Components/SearchBar/SearchBar";

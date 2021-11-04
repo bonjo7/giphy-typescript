@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Spinner from "../Spinner/Spinner";
 import { useSharedStore } from "../../Store/SahredStore";
@@ -10,14 +10,11 @@ interface Props {
 }
 
 const GifList: FunctionComponent<Props> = (props) => {
-
-  
   const { gifs } = useSharedStore();
-
-  // const { getGifsData, isLoading } = UseRoutes();
 
   useEffect(() => {
     props.getGifsData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return props.isLoading ? (
