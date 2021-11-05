@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import { Navbar, Container } from "react-bootstrap";
 import UseRoutes from "../../Hooks/RoutesHook";
-import GiphyLogo from "../Images/giphy.png";
+import GiphyLogo from "../../Images/giphy.png"
 
 const NavBar: FunctionComponent = () => {
   const { getGifsData } = UseRoutes();
