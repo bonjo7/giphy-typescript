@@ -2,11 +2,10 @@ FROM node:13.12.0-alpine
 
 LABEL maintainer="Bernard Thompson bernardthompson83@gmail.com"
 
-EXPOSE 8080
-WORKDIR /src
-ADD package.json /src 
+WORKDIR /usr/src/app
+ADD package.json ./ 
 RUN npm install
-COPY . .
+COPY . ./
 RUN npm run build 
 EXPOSE 8080
 
