@@ -1,0 +1,11 @@
+- Giphy API Key from [Giphy](https://developers.giphy.com/)
+  - Visit the giphy URL [Giphy](https://developers.giphy.com/)
+  - Click `Get Started` button
+  - Click `Create an App`
+  - Sign Up and Login
+  - Click `Create App` once signed in
+  - Select `API -> Next Step`
+  - Enter App Name e.g. `My First Giphy App`
+  - Accept terms and conditions
+  - Click create app
+  - Your giphy API should be made available to you now.
