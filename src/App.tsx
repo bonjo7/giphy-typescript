@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 const App: FunctionComponent = () => {
+  const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+  console.log(`API_KEY: ${API_KEY}`);
   return (
     <>
       <Router>
