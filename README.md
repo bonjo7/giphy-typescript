@@ -33,4 +33,4 @@ In order to run this application you will need the following
   - In this file create a variable `REACT_APP_GIPHY_API_KEY`
   - Your `.env` file should look like this `REACT_APP_GIPHY_API_KEY=<your_giphy_key>`
 - Start app `npm run start`
-- App should not be running on port 3000 `http://localhost:3000`
+- App should not be running on port 8080 `http://localhost:8080`
